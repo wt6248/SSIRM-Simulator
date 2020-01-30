@@ -435,7 +435,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1625467343}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -453,10 +453,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_1_Vector
       objectReference: {fileID: 0}
+    - target: {fileID: 8163329382356507800, guid: 31a18a5bb79b6ea40966ac74d7798c1f,
+        type: 3}
+      propertyPath: vector_Manager
+      value: 
+      objectReference: {fileID: 659037791}
+    - target: {fileID: 8163329382356507801, guid: 31a18a5bb79b6ea40966ac74d7798c1f,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8163329382356507801, guid: 31a18a5bb79b6ea40966ac74d7798c1f,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8163329382356507801, guid: 31a18a5bb79b6ea40966ac74d7798c1f,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8163329382356507802, guid: 31a18a5bb79b6ea40966ac74d7798c1f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8163329382356507802, guid: 31a18a5bb79b6ea40966ac74d7798c1f,
         type: 3}
@@ -508,25 +528,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8163329382356507801, guid: 31a18a5bb79b6ea40966ac74d7798c1f,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8163329382356507801, guid: 31a18a5bb79b6ea40966ac74d7798c1f,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8163329382356507801, guid: 31a18a5bb79b6ea40966ac74d7798c1f,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8163329382356507800, guid: 31a18a5bb79b6ea40966ac74d7798c1f,
-        type: 3}
-      propertyPath: vector_Manager
-      value: 
-      objectReference: {fileID: 659037791}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31a18a5bb79b6ea40966ac74d7798c1f, type: 3}
