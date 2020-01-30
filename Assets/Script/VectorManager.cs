@@ -36,17 +36,19 @@ public class VectorManager : MonoBehaviour
         low_Click_Change *= 1.5f;
     }
 
+    //테스트 안함.
     public void winner_checker()
     {
+        Timer temp_timer = GameObject.Find("Timer").GetComponent<Timer>();
         float length_1 = function_Reference_1.vector_length();
         float length_2 = function_Reference_2.vector_length();
         if(length_1 > 180f)
         {
-            //1이 이겼다는 내용과 함께 게임종료 함수를 호출
+            temp_timer.GameEnd(1);
         }
         if (length_2 > 180f)
         {
-            // 2가 이겼다는 내용과 함께 게임종료 함수 호출
+            temp_timer.GameEnd(2);
         }
     }
 
