@@ -1118,7 +1118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 2007718933}
-  vec_Man: {fileID: 0}
+  vec_Man: {fileID: 659037792}
 --- !u!1001 &8163329380735317320
 PrefabInstance:
   m_ObjectHideFlags: 0

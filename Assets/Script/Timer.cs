@@ -32,7 +32,7 @@ public class Timer : MonoBehaviour
 
         if(limitTime < 0 && !game_End_Value)
         {
-            int winner = vec_Man.winner_Decider();
+            TimeOver();
             game_End_Value = true;
         }
 
