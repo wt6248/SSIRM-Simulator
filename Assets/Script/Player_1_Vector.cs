@@ -36,6 +36,8 @@ public class Player_1_Vector : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
+
+            GetComponent<AudioSource>().Play();
             //if(vector_x > 0)
             //{
             //    vector_x -= change_reference.click_Change;
@@ -58,6 +60,8 @@ public class Player_1_Vector : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
+
+            GetComponent<AudioSource>().Play();
             //if (vector_x < 0)
             //{
             //    vector_x += change_reference.click_Change;
@@ -74,8 +78,8 @@ public class Player_1_Vector : MonoBehaviour
             {
                 if (vector_x > change_reference.winning_length * 0.5) 
                 { 
-                    Debug.Log("아주 조금 늘어날꺼야>");
-                    Debug.Log(change_reference.low_Click_Change);
+                    //Debug.Log("아주 조금 늘어날꺼야>");
+                    //Debug.Log(change_reference.low_Click_Change);
                     vector_x += change_reference.low_Click_Change;
                 }
                 else
@@ -84,6 +88,8 @@ public class Player_1_Vector : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.W))
         {
+
+            GetComponent<AudioSource>().Play();
             //if (vector_y < 0)
             //{
             //    vector_y += change_reference.click_Change;
@@ -106,6 +112,7 @@ public class Player_1_Vector : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
+            GetComponent<AudioSource>().Play();
             //if (vector_y > 0)
             //{
             //    vector_y -= change_reference.click_Change;
@@ -126,6 +133,8 @@ public class Player_1_Vector : MonoBehaviour
                     vector_y -= change_reference.click_Change;
             }
         }
+
+        //효과음 파트
     }
 
     public float vector_length()

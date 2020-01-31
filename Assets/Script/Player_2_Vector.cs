@@ -33,12 +33,13 @@ public class Player_2_Vector : MonoBehaviour
     {
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                //if(vector_x > 0)
-                //{
-                //    vector_x -= change_reference.click_Change;
-                //}
-                //else
-                if (opponent_1_Vector.vector_x < 0)
+            GetComponent<AudioSource>().Play();
+            //if(vector_x > 0)
+            //{
+            //    vector_x -= change_reference.click_Change;
+            //}
+            //else
+            if (opponent_1_Vector.vector_x < 0)
                 {
                     if (opponent_1_Vector.vector_x < -change_reference.winning_length * 0.5)
                         opponent_1_Vector.vector_x += change_reference.high_Click_Change;
@@ -55,12 +56,13 @@ public class Player_2_Vector : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
-                //if (vector_x < 0)
-                //{
-                //    vector_x += change_reference.click_Change;
-                //}
-                //else 
-                if (opponent_1_Vector.vector_x > 0)
+            GetComponent<AudioSource>().Play();
+            //if (vector_x < 0)
+            //{
+            //    vector_x += change_reference.click_Change;
+            //}
+            //else 
+            if (opponent_1_Vector.vector_x > 0)
                 {
                     if (opponent_1_Vector.vector_x > change_reference.winning_length * 0.5)
                         opponent_1_Vector.vector_x -= change_reference.high_Click_Change;
@@ -77,11 +79,12 @@ public class Player_2_Vector : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
+                GetComponent<AudioSource>().Play();
                 //if (vector_y < 0)
                 //{
                 //    vector_y += change_reference.click_Change;
                 //}
-                //else 
+                //else GetComponent<AudioSource>().Play();
                 if (opponent_1_Vector.vector_y > 0)
                 {
                     if (opponent_1_Vector.vector_y > change_reference.winning_length * 0.5)
@@ -99,12 +102,13 @@ public class Player_2_Vector : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
-                //if (vector_y > 0)
-                //{
-                //    vector_y -= change_reference.click_Change;
-                //}
-                //else 
-                if (opponent_1_Vector.vector_y < 0)
+            GetComponent<AudioSource>().Play();
+            //if (vector_y > 0)
+            //{
+            //    vector_y -= change_reference.click_Change;
+            //}
+            //else 
+            if (opponent_1_Vector.vector_y < 0)
                 {
                     if (opponent_1_Vector.vector_y < -change_reference.winning_length * 0.5)
                         opponent_1_Vector.vector_y += change_reference.high_Click_Change;
