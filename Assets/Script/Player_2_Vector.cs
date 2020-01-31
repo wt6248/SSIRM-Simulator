@@ -11,14 +11,14 @@ public class Player_2_Vector : MonoBehaviour
     public GameObject vector_Manager;
     VectorManager change_reference;
 
-    Player_1_Vector vector_Rerference;
+    Player_1_Vector opponent_1_Vector;
     Vector3 starting_Position;
     void Start()
     {
         vector_x = 0f;
         vector_y = 0f;
         change_reference = vector_Manager.GetComponent<VectorManager>();
-        vector_Rerference = GameObject.Find("Player_1_Vector").GetComponent<Player_1_Vector>();
+        opponent_1_Vector = GameObject.Find("Player_1_Vector").GetComponent<Player_1_Vector>();
         starting_Position = this.transform.position;
     }
 
@@ -38,17 +38,17 @@ public class Player_2_Vector : MonoBehaviour
                 //    vector_x -= change_reference.click_Change;
                 //}
                 //else
-                if (vector_Rerference.vector_x < 0)
+                if (opponent_1_Vector.vector_x < 0)
                 {
-                    if (vector_Rerference.vector_x < -140)
-                        vector_Rerference.vector_x += change_reference.high_Click_Change;
+                    if (opponent_1_Vector.vector_x < -change_reference.winning_length * 0.5)
+                        opponent_1_Vector.vector_x += change_reference.high_Click_Change;
                     else
-                        vector_Rerference.vector_x += change_reference.click_Change;
+                        opponent_1_Vector.vector_x += change_reference.click_Change;
                 }
                 else
                 {
-                    if (vector_x < -140)
-                        vector_Rerference.vector_x -= change_reference.low_Click_Change;
+                    if (vector_x < -change_reference.winning_length * 0.5)
+                        vector_x -= change_reference.low_Click_Change;
                     else
                         vector_x -= change_reference.click_Change;
                 }
@@ -60,17 +60,17 @@ public class Player_2_Vector : MonoBehaviour
                 //    vector_x += change_reference.click_Change;
                 //}
                 //else 
-                if (vector_Rerference.vector_x > 0)
+                if (opponent_1_Vector.vector_x > 0)
                 {
-                    if (vector_Rerference.vector_x > 140)
-                        vector_Rerference.vector_x -= change_reference.high_Click_Change;
+                    if (opponent_1_Vector.vector_x > change_reference.winning_length * 0.5)
+                        opponent_1_Vector.vector_x -= change_reference.high_Click_Change;
                     else
-                        vector_Rerference.vector_x -= change_reference.click_Change;
+                        opponent_1_Vector.vector_x -= change_reference.click_Change;
                 }
                 else
                 {
-                    if (vector_x > 140)
-                        vector_Rerference.vector_x += change_reference.low_Click_Change;
+                    if (vector_x > change_reference.winning_length * 0.5)
+                        vector_x += change_reference.low_Click_Change;
                     else
                         vector_x += change_reference.click_Change;
                 }
@@ -82,17 +82,17 @@ public class Player_2_Vector : MonoBehaviour
                 //    vector_y += change_reference.click_Change;
                 //}
                 //else 
-                if (vector_Rerference.vector_y > 0)
+                if (opponent_1_Vector.vector_y > 0)
                 {
-                    if (vector_Rerference.vector_y > 140)
-                        vector_Rerference.vector_y -= change_reference.high_Click_Change;
+                    if (opponent_1_Vector.vector_y > change_reference.winning_length * 0.5)
+                        opponent_1_Vector.vector_y -= change_reference.high_Click_Change;
                     else
-                        vector_Rerference.vector_y -= change_reference.click_Change;
+                        opponent_1_Vector.vector_y -= change_reference.click_Change;
                 }
                 else
                 {
-                    if (vector_y > 140)
-                        vector_Rerference.vector_y += change_reference.low_Click_Change;
+                    if (vector_y > change_reference.winning_length * 0.5)
+                        vector_y += change_reference.low_Click_Change;
                     else
                         vector_y += change_reference.click_Change;
                 }
@@ -104,17 +104,17 @@ public class Player_2_Vector : MonoBehaviour
                 //    vector_y -= change_reference.click_Change;
                 //}
                 //else 
-                if (vector_Rerference.vector_y < 0)
+                if (opponent_1_Vector.vector_y < 0)
                 {
-                    if (vector_Rerference.vector_y < -140)
-                        vector_Rerference.vector_y += change_reference.high_Click_Change;
+                    if (opponent_1_Vector.vector_y < -change_reference.winning_length * 0.5)
+                        opponent_1_Vector.vector_y += change_reference.high_Click_Change;
                     else
-                        vector_Rerference.vector_y += change_reference.click_Change;
+                        opponent_1_Vector.vector_y += change_reference.click_Change;
                 }
                 else
                 {
-                    if (vector_y < -140)
-                        vector_Rerference.vector_y -= change_reference.low_Click_Change;
+                    if (vector_y < -change_reference.winning_length * 0.5)
+                        vector_y -= change_reference.low_Click_Change;
                     else
                         vector_y -= change_reference.click_Change;
                 }
@@ -126,16 +126,25 @@ public class Player_2_Vector : MonoBehaviour
     {
         return Mathf.Pow((Mathf.Pow(vector_x, 2) + Mathf.Pow(vector_y, 2)), 0.5f);
     }
+    public float vector_Angle()
+    {
+        return Mathf.Atan2(vector_y, vector_x);
+    }
+
 
     void make_transform_from_vectors()
     {
-        float rotate_Value = Mathf.Atan2(vector_y, vector_x) * Mathf.Rad2Deg;
-        float scale = vector_length() / 20;
-        float x_trans = Mathf.Cos(Mathf.Atan2(vector_y, vector_x)) * scale * 4;
-        float Y_trans = Mathf.Sin(Mathf.Atan2(vector_y, vector_x)) * scale * 4;
-        transform.position = new Vector3(x_trans, Y_trans, 0f) + starting_Position;
-        transform.rotation = Quaternion.Euler(0, 0, rotate_Value);
+        //백터의 각도. rotation에 사용됨. x축을 기준으로 반시계 방향으로 회전, 360도를 잰다.
+        float angle = vector_Angle() * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, angle);
+
+        //1클릭에 x축으로 1 늘어남. 승리 클릭 횟수(20으로 가정)만큼 클릭하면 백터 길이는 20이지만, scale은 0.5가 되게 하고 싶음.
+        float scale = 0.5f / change_reference.winning_length * vector_length();
         transform.localScale = new Vector3(scale, scale, 0);
 
+        //scale이 0.5면 추가 trans는 1.5, scale이 1이면 추가되어야 할 position은 3.
+        float x_trans = Mathf.Cos(Mathf.Atan2(vector_y, vector_x)) * scale * 3;
+        float Y_trans = Mathf.Sin(Mathf.Atan2(vector_y, vector_x)) * scale * 3;
+        transform.position = new Vector3(x_trans, Y_trans, 0f) + starting_Position;
     }
 }
