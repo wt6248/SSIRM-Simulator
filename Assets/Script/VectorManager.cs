@@ -11,6 +11,7 @@ public class VectorManager : MonoBehaviour
     public float high_Click_Change;
     public float low_Click_Change;
     public float winning_length;
+    public float change_length;
 
     public GameObject player_Vector_1;
     public GameObject player_Vector_2;
@@ -27,6 +28,7 @@ public class VectorManager : MonoBehaviour
         high_Click_Change = 1.3f;
         low_Click_Change = 0.7f;
         winning_length = 180;
+        change_length = 140;
 }
 
     // Update is called once per frame

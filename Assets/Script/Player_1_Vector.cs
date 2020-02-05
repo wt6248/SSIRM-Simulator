@@ -45,14 +45,14 @@ public class Player_1_Vector : MonoBehaviour
             //else
             if (opponent_2_Vector.vector_x < 0)
             {
-                if (opponent_2_Vector.vector_x < -change_reference.winning_length * 0.5)
+                if (opponent_2_Vector.vector_x < -change_reference.change_length)
                     opponent_2_Vector.vector_x += change_reference.high_Click_Change;
                 else
                     opponent_2_Vector.vector_x += change_reference.click_Change;
             }
             else
             {
-                if (vector_x < -change_reference.winning_length * 0.5)
+                if (vector_x < -change_reference.change_length)
                     vector_x -= change_reference.low_Click_Change;
                 else
                     vector_x -= change_reference.click_Change;
@@ -69,14 +69,14 @@ public class Player_1_Vector : MonoBehaviour
             //else 
             if (opponent_2_Vector.vector_x > 0)
             {
-                if (opponent_2_Vector.vector_x > change_reference.winning_length * 0.5)
+                if (opponent_2_Vector.vector_x > change_reference.change_length)
                     opponent_2_Vector.vector_x -= change_reference.high_Click_Change;
                 else
                     opponent_2_Vector.vector_x -= change_reference.click_Change;
             }
             else
             {
-                if (vector_x > change_reference.winning_length * 0.5) 
+                if (vector_x > change_reference.change_length) 
                 { 
                     //Debug.Log("아주 조금 늘어날꺼야>");
                     //Debug.Log(change_reference.low_Click_Change);
@@ -97,14 +97,14 @@ public class Player_1_Vector : MonoBehaviour
             //else 
             if (opponent_2_Vector.vector_y > 0)
             {
-                if (opponent_2_Vector.vector_y > change_reference.winning_length * 0.5)
+                if (opponent_2_Vector.vector_y > change_reference.change_length)
                     opponent_2_Vector.vector_y -= change_reference.high_Click_Change;
                 else
                     opponent_2_Vector.vector_y -= change_reference.click_Change;
             }
             else
             {
-                if (vector_y > change_reference.winning_length * 0.5)
+                if (vector_y > change_reference.change_length)
                     vector_y += change_reference.low_Click_Change;
                 else
                     vector_y += change_reference.click_Change;
@@ -120,14 +120,14 @@ public class Player_1_Vector : MonoBehaviour
             //else 
             if (opponent_2_Vector.vector_y < 0)
             {
-                if (opponent_2_Vector.vector_y < -change_reference.winning_length * 0.5)
+                if (opponent_2_Vector.vector_y < -change_reference.change_length)
                     opponent_2_Vector.vector_y += change_reference.high_Click_Change;
                 else
                     opponent_2_Vector.vector_y += change_reference.click_Change;
             }
             else
             {
-                if (vector_y < -change_reference.winning_length * 0.5)
+                if (vector_y < -change_reference.change_length)
                     vector_y -= change_reference.low_Click_Change;
                 else
                     vector_y -= change_reference.click_Change;
@@ -153,8 +153,8 @@ public class Player_1_Vector : MonoBehaviour
         float angle = vector_Angle() * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle);
 
-        //1클릭에 x축으로 1 늘어남. 승리 클릭 횟수(20으로 가정)만큼 클릭하면 백터 길이는 20이지만, scale은 0.5가 되게 하고 싶음.
-        float scale = 0.5f / change_reference.winning_length * vector_length();
+        //1클릭에 x축으로 1 늘어남. 승리 클릭 횟수(20으로 가정)만큼 클릭하면 백터 길이는 20이지만, scale은 0.4가 되게 하고 싶음.
+        float scale = 0.4f / change_reference.winning_length * vector_length();
         transform.localScale = new Vector3(scale, scale, 0);
 
         //scale이 0.5면 추가 trans는 1.5, scale이 1이면 추가되어야 할 position은 3.
