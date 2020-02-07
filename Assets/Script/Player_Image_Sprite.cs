@@ -50,24 +50,24 @@ public class Player_Image_Sprite : MonoBehaviour
 
         if (vector_1_length > 140 && vector_1_length > vector_2_length)
         {
-            if (vector_1_angle < 45 || vector_1_angle >= 315)
+            if (vector_1_angle < 45 && vector_1_angle >= -45)
                 animator.SetInteger("Attack_state", 1);
             else if (vector_1_angle >= 45 && vector_1_angle < 135)
                 animator.SetInteger("Attack_state", 3);
-            else if (vector_1_angle >= 135 && vector_1_angle < 225)
+            else if (vector_1_angle >= 135 || vector_1_angle < -135)
                 animator.SetInteger("Attack_state", 2);
-            else if (vector_1_angle >= 225 && vector_1_angle < 315)
+            else if (vector_1_angle >= -135 && vector_1_angle < -45)
                 animator.SetInteger("Attack_state", 4);
         }
         else if (vector_2_length > 140 && vector_2_length > vector_1_length)
         {
-            if (vector_2_angle < 45 || vector_2_angle >= 315)
+            if (vector_2_angle < 45 && vector_2_angle >= -45)
                 animator.SetInteger("Attack_state", 5);
             else if (vector_2_angle >= 45 && vector_2_angle < 135)
                 animator.SetInteger("Attack_state", 7);
-            else if (vector_2_angle >= 135 && vector_2_angle < 225)
+            else if (vector_2_angle >= 135 || vector_2_angle < -135)
                 animator.SetInteger("Attack_state", 6);
-            else if (vector_2_angle >= 225 && vector_2_angle < 315)
+            else if (vector_2_angle >= -135 && vector_2_angle < -45)
                 animator.SetInteger("Attack_state", 8);
         }
         else if (vector_1_length > 180)
