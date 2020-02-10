@@ -7,51 +7,46 @@ public class Button_Game_Start : MonoBehaviour
     public UnityEngine.UI.Image countdown_Image;
     public Sprite image_2;
     public Sprite image_1;
+
+    public Player_1_Vector make_Vector1_length_0;
+    public Player_2_Vector make_Vector2_length_0;
+
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 1;
+        Time.timeScale = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        make_Vector1_length_0.vector_x = 0;
+        make_Vector1_length_0.vector_y = 0;
+        make_Vector2_length_0.vector_x = 0;
+        make_Vector2_length_0.vector_y = 0;
     }
 
-    public void game_start()
+    public void tempGameStart()
     {
-        //3을 화면에 띄우는 함수. + 소리 효과.
+        StartCoroutine(tempFunction());
+    }
+    IEnumerator tempFunction()
+    {
         countdown_Image.color = new Color(255, 255, 255, 255);
         GetComponent<AudioSource>().Play();
+        yield return new WaitForSecondsRealtime(1);
 
-        //1초 지연
-        Invoke("delay_function", 1);
-
-        //2를 화면에 띄우는 함수. + 소리 효과. 
         countdown_Image.sprite = image_2;
         GetComponent<AudioSource>().Play();
+        yield return new WaitForSecondsRealtime(1);
 
-        //1초 지연
-        Invoke("delay_function", 1);
-
-        //1를 화면에 띄우는 함수. + 소리 효과.
         countdown_Image.sprite = image_1;
         GetComponent<AudioSource>().Play();
+        yield return new WaitForSecondsRealtime(1);
 
-        //1초 지연
-        Invoke("delay_function", 1);
-
-        //Time.TimeScale = 1 하고, 스타트 브금 틀어주고, 버튼 자기자신 삭제.
-        //스타트 브금 시작 코드 작성.
         Time.timeScale = 1;
         GetComponent<AudioSource>().Play();
-        countdown_Image.color = new Color(255, 255, 255, 0);
+        countdown_Image.color = new Color(255, 255, 255, 255);
         Destroy(gameObject);
-    }
-
-    void delay_function()
-    {
-        Debug.Log("delay_function called");
     }
 }

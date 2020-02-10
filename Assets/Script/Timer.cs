@@ -22,7 +22,7 @@ public class Timer : MonoBehaviour
     void Update()
     {
         limitTime -= Time.deltaTime;
-        text.text = " " + limitTime;
+        text.text = string.Format("{0:f0}", limitTime);
 
         if(limitTime < 30 && !game_30s_Value)
         {
