@@ -76,4 +76,40 @@ public class VectorManager : MonoBehaviour
         else
             return 0;
     }
+
+    public Color what_Circle_Color()
+    {
+        float length_1 = function_Reference_1.vector_length();
+        float length_2 = function_Reference_2.vector_length();
+
+        float temp_a = 0.6f / (change_length - winning_length);
+        float temp_b = 0.4f - winning_length * temp_a;
+
+        float temp_color_number1 = temp_a * length_1 + temp_b;
+        float temp_color_number2 = temp_a * length_2 + temp_b;
+
+        
+        if (length_1< change_length && length_2< change_length)
+        {
+            //흰색 원 출력
+            return new Color(1, 1, 1, 1);
+        }
+        else if (length_1 > change_length)
+        {
+            if(length_2 > length_1)
+            {
+                //파란 샅바 출력
+                return new Color(temp_color_number2, temp_color_number2, 1, 1);
+            }
+            else{
+                //빨간 샅바 출력
+                return new Color(255, temp_color_number1, temp_color_number1, 1);
+            }
+        }
+        else
+        {
+            //파란 샅바 출력
+            return new Color(temp_color_number2, temp_color_number2, 1, 1);
+        }
+    }
 }
