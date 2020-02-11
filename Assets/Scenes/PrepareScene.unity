@@ -276,7 +276,7 @@ GameObject:
   - component: {fileID: 407327817}
   - component: {fileID: 407327816}
   m_Layer: 0
-  m_Name: sand
+  m_Name: Arena
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -436,7 +436,7 @@ GameObject:
   - component: {fileID: 479660017}
   - component: {fileID: 479660020}
   m_Layer: 0
-  m_Name: Crowd
+  m_Name: FrontAudience
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1118,7 +1118,7 @@ GameObject:
   - component: {fileID: 1904692065}
   - component: {fileID: 1904692064}
   m_Layer: 0
-  m_Name: background
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
