@@ -27,8 +27,8 @@ public class VectorManager : MonoBehaviour
         click_Change = 1f;
         high_Click_Change = 1.3f;
         low_Click_Change = 0.7f;
-        winning_length = 180;
-        change_length = 140;
+        winning_length = 90;
+        change_length = 30;
 }
 
     // Update is called once per frame
