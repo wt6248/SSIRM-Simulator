@@ -42,10 +42,6 @@ public class Player_Image_Sprite : MonoBehaviour
         float vector_2_angle = vector_2.vector_Angle() * Mathf.Rad2Deg;
         float vector_1_length = vector_1.vector_length();
         float vector_2_length = vector_2.vector_length();
-//        Debug.Log("asdf");
- //       Debug.Log(vector_2_angle);
-//        Debug.Log(vector_1_angle);
-//        Debug.Log(vector_1_length);
 
 
         if (vector_1_length > 140 && vector_1_length > vector_2_length)
