@@ -44,7 +44,6 @@ public class Player_Image_Sprite : MonoBehaviour
         float vector_2_length = vector_2.vector_length();
 
 
-
         if (vector_1_length > 140 && vector_1_length > vector_2_length)
         {
             if (vector_1_angle < 45 && vector_1_angle >= -45)
