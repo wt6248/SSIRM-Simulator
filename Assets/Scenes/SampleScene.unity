@@ -1690,8 +1690,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 14.5, y: 103}
-  m_SizeDelta: {x: -571, y: -406}
+  m_AnchoredPosition: {x: -22.97, y: 10.54}
+  m_SizeDelta: {x: -496.05, y: -221.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1740611982
 MonoBehaviour:
@@ -2047,8 +2047,8 @@ MonoBehaviour:
   countdown_Image: {fileID: 1836085620}
   image_2: {fileID: 21300000, guid: 56009871ffcd5e24da9c3b6afe308be5, type: 3}
   image_1: {fileID: 21300000, guid: 2644abef12d68dc40b5455d239467372, type: 3}
-  make_Vector1_length_0: {fileID: 0}
-  make_Vector2_length_0: {fileID: 0}
+  make_Vector1_length_0: {fileID: 1625467344}
+  make_Vector2_length_0: {fileID: 61881455}
 --- !u!82 &2016535029
 AudioSource:
   m_ObjectHideFlags: 0
