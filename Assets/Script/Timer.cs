@@ -7,27 +7,35 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     float limitTime;
     bool game_End_Value;
-    bool game_30s_Value;
+    bool is_death_match;
     public UnityEngine.UI.Text text;
     public VectorManager vec_Man;
     
     void Start()
     {
-        limitTime = 90f;
+        is_death_match = false;
+        limitTime = 30f;
         game_End_Value = false;
-        game_30s_Value = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        limitTime -= Time.deltaTime;
-        text.text = string.Format("{0:f0}", limitTime);
+        if(!game_End_Value)
+            limitTime -= Time.deltaTime;
+        if (is_death_match)
+            text.text = limitTime.ToString();
+        else
+            text.text = string.Format("{0:f0}", limitTime);
 
-        if(limitTime < 30 && !game_30s_Value)
+        if(limitTime < 0 && !is_death_match)
         {
+            limitTime = 15f;
             vec_Man.change_Change();
-            game_30s_Value = true;
+            text.fontSize = 40;
+            text.fontStyle = FontStyle.Bold;
+            text.color = new Color(1, 0.25f, 0.25f, 1);
+            is_death_match = true;
         }
 
         if(limitTime < 0 && !game_End_Value)
@@ -61,5 +69,10 @@ public class Timer : MonoBehaviour
     public void TimeOver()
     {
         GameEnd(vec_Man.winner_Decider());
+    }
+
+    public void moveToEndingScene()
+    {
+        //엔딩씬으로 넘어가는 코드 여기에 작성.
     }
 }
