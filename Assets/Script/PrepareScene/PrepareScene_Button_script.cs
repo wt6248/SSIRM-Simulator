@@ -52,7 +52,7 @@ public class PrepareScene_Button_script : MonoBehaviour
 
         //선수 일어남.
         player.sprite = player_wake;
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3.5f);
         UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
     }
 }

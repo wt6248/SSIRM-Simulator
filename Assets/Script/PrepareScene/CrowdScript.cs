@@ -34,12 +34,12 @@ public class CrowdScript : MonoBehaviour
             yield return new WaitForSeconds(1);
             if (movement)
             {
-                transform.position += new Vector3(0, 0.3f, 0);
+                transform.position -= new Vector3(0, 0.3f, 0);
                 movement = false;
             }
             else
             {
-                transform.position -= new Vector3(0, 0.3f, 0);
+                transform.position += new Vector3(0, 0.3f, 0);
                 movement = true;
             }
         }
