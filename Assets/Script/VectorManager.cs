@@ -92,24 +92,24 @@ public class VectorManager : MonoBehaviour
         if (length_1< change_length && length_2< change_length)
         {
             //흰색 원 출력
-            return new Color(1, 1, 1, 1);
+            return new Color(1, 1, 1, 0.5f);
         }
         else if (length_1 > change_length)
         {
             if(length_2 > length_1)
             {
                 //파란 샅바 출력
-                return new Color(temp_color_number2, temp_color_number2, 1, 1);
+                return new Color(temp_color_number2, temp_color_number2, 1, 0.5f);
             }
             else{
                 //빨간 샅바 출력
-                return new Color(255, temp_color_number1, temp_color_number1, 1);
+                return new Color(255, temp_color_number1, temp_color_number1, 0.5f);
             }
         }
         else
         {
             //파란 샅바 출력
-            return new Color(temp_color_number2, temp_color_number2, 1, 1);
+            return new Color(temp_color_number2, temp_color_number2, 1, 0.5f);
         }
     }
 }
