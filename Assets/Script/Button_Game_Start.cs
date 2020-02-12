@@ -15,6 +15,7 @@ public class Button_Game_Start : MonoBehaviour
     void Start()
     {
         Time.timeScale = 0;
+        StartCoroutine(tempFunction());
     }
 
     // Update is called once per frame
@@ -26,10 +27,6 @@ public class Button_Game_Start : MonoBehaviour
         make_Vector2_length_0.vector_y = 0;
     }
 
-    public void tempGameStart()
-    {
-        StartCoroutine(tempFunction());
-    }
     IEnumerator tempFunction()
     {
         countdown_Image.color = new Color(255, 255, 255, 255);
