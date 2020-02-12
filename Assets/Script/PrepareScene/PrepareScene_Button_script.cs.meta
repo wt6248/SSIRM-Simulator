@@ -3,7 +3,16 @@ guid: 70eb36b1cfc4e8345a95f0041615f37c
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - stop_This_BGM: {instanceID: 0}
+  - destroy_This_Button: {instanceID: 0}
+  - half_judge: {fileID: 21300000, guid: a23ee29a19c9daf4487a4a895132425c, type: 3}
+  - wake_judge: {fileID: 21300000, guid: 15638519bb76e9244bb28003e1762c58, type: 3}
+  - player_wake: {fileID: -8276262488406422588, guid: c07270faf45e0b94bb8f3e0b8a706cae,
+      type: 3}
+  - judge: {instanceID: 0}
+  - player: {instanceID: 0}
+  - stop_Crowd_movement: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

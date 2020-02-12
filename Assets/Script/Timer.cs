@@ -45,7 +45,7 @@ public class Timer : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
-            GameEnd(1);
+            moveToEndingScene();
         if (Input.GetKeyDown(KeyCode.Alpha2))
             GameEnd(2);
         if (Input.GetKeyDown(KeyCode.Alpha3))
@@ -74,5 +74,6 @@ public class Timer : MonoBehaviour
     public void moveToEndingScene()
     {
         //엔딩씬으로 넘어가는 코드 여기에 작성.
+        UnityEngine.SceneManagement.SceneManager.LoadScene("EndingScene");
     }
 }

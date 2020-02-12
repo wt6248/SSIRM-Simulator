@@ -10,6 +10,7 @@ public class Player_Image_Sprite : MonoBehaviour
     Player_1_Vector vector_1;
     Player_2_Vector vector_2;
 
+    void Awake() { DontDestroyOnLoad(this); }
 
     void Start()
     {
@@ -77,6 +78,7 @@ public class Player_Image_Sprite : MonoBehaviour
         else
         {
             animator.SetInteger("Attack_state", 0);
+            animator.GetInteger("attack_state");
         }
     }
 }
