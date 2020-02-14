@@ -826,7 +826,7 @@ GameObject:
   - component: {fileID: 669052582}
   - component: {fileID: 669052581}
   m_Layer: 0
-  m_Name: AudioManager
+  m_Name: MainBGM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -844,7 +844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6bbd93b771947e45b3979d1bed13904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundMusic: {fileID: 8300000, guid: b195da149b5e09c46a30c601434cdb7f, type: 3}
+  backgroundMusic: {fileID: 8300000, guid: 9cea013d27cb60f4ea5447631404270b, type: 3}
 --- !u!82 &669052582
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1845,7 +1845,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.52500004}
   m_AnchorMin: {x: 0.20435749, y: 0.23512873}
   m_AnchorMax: {x: 0.721, y: 0.66587126}
-  m_AnchoredPosition: {x: 0.73, y: -2.15}
+  m_AnchoredPosition: {x: 0.7299957, y: -2.1499996}
   m_SizeDelta: {x: 1.58, y: -6.53}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1740611982

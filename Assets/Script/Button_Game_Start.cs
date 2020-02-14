@@ -41,6 +41,7 @@ public class Button_Game_Start : MonoBehaviour
         GetComponent<AudioSource>().Play();
         yield return new WaitForSecondsRealtime(1);
 
+        GameObject.Find("MainBGM").GetComponent<AudioManager>().StartBGM();
         Time.timeScale = 1;
         GetComponent<AudioSource>().Play();
         countdown_Image.color = new Color(255, 255, 255, 255);

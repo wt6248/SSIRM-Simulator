@@ -10,13 +10,13 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         source = GetComponent<AudioSource>();
-        StartBGM();
+        //StartBGM();
     }
 
     public void StartBGM()
     {
         source.clip = backgroundMusic;
-        source.loop = true;
+        source.loop = false;
         source.volume = 0.3f;
         source.Play();
     }
