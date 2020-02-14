@@ -5,6 +5,7 @@ using UnityEngine;
 public class PrepareScene_Button_script : MonoBehaviour
 {
     public AudioSource stop_This_BGM;
+    public AudioSource judge_Speaks_Standup;
     public GameObject destroy_This_Button;
     AudioSource zzing_sound;
     public Sprite half_judge;
@@ -48,7 +49,11 @@ public class PrepareScene_Button_script : MonoBehaviour
 
         //움직이는 거 멈춤.
         stop_Crowd_movement.stop_crowd_move();
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2.5f);
+
+        //심판 : 일어~섯!
+        judge_Speaks_Standup.Play();
+        yield return new WaitForSeconds(2.5f);
 
         //선수 일어남.
         player.sprite = player_wake;
