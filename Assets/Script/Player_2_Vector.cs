@@ -8,18 +8,17 @@ public class Player_2_Vector : MonoBehaviour
 
     public float vector_x;
     public float vector_y;
-    public GameObject vector_Manager;
-    VectorManager change_reference;
+    public VectorManager change_reference;
 
-    Player_1_Vector opponent_1_Vector;
-    Vector3 starting_Position;
+    Player_1_Vector opponent_1_Vector; 
+    RectTransform this_RectTransform;
     void Start()
     {
         vector_x = 0f;
         vector_y = 0f;
-        change_reference = vector_Manager.GetComponent<VectorManager>();
         opponent_1_Vector = GameObject.Find("Player_1_Vector").GetComponent<Player_1_Vector>();
-        starting_Position = this.transform.position;
+        //starting_Position = this.transform.position;
+        this_RectTransform = GetComponent<RectTransform>();
     }
 
     // Update is called once per frame
@@ -138,6 +137,7 @@ public class Player_2_Vector : MonoBehaviour
 
     void make_transform_from_vectors()
     {
+        /*
         //백터의 각도. rotation에 사용됨. x축을 기준으로 반시계 방향으로 회전, 360도를 잰다.
         float angle = vector_Angle() * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle);
@@ -150,5 +150,18 @@ public class Player_2_Vector : MonoBehaviour
         float x_trans = Mathf.Cos(Mathf.Atan2(vector_y, vector_x)) * scale * 3;
         float Y_trans = Mathf.Sin(Mathf.Atan2(vector_y, vector_x)) * scale * 3;
         transform.position = new Vector3(x_trans, Y_trans, 0f) + starting_Position;
+        */
+
+        //코드가 수정됨.
+        //1. transform 변수가 transform에서 rectTrasfrom으로 바뀜.
+        //Rotation과 Scale만 바꾸면 된다. (pivot 조절로 가능해짐.)
+
+        //백터 길이가 승리 길이일 때, scale이 1이면 된다.
+        float scale = 1f / change_reference.winning_length * vector_length();
+        this_RectTransform.localScale = new Vector3(scale, scale, 0);
+
+        //백터 각도에 맞춰 Rotation을 돌린다.
+        float angle = vector_Angle() * Mathf.Rad2Deg;
+        this_RectTransform.rotation = Quaternion.Euler(0, 0, angle);
     }
 }
