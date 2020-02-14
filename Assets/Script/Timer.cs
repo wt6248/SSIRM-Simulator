@@ -11,6 +11,7 @@ public class Timer : MonoBehaviour
     public UnityEngine.UI.Text text;
     public VectorManager vec_Man;
     public Player_Image_Sprite player_image_sprite;
+    public Sprite deathmatch_Sprite;
     void Start()
     {
         is_death_match = false;
@@ -37,6 +38,7 @@ public class Timer : MonoBehaviour
             text.fontStyle = FontStyle.Bold;
             text.color = new Color(1, 0.25f, 0.25f, 1);
             is_death_match = true;
+            transform.parent.GetComponent<UnityEngine.UI.Image>().sprite = deathmatch_Sprite;
         }
 
         if(limitTime < 0 && !game_End_Value)
