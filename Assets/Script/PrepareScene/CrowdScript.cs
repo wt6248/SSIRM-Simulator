@@ -22,7 +22,7 @@ public class CrowdScript : MonoBehaviour
 
     public void stop_crowd_move()
     {
-        StartCoroutine(stop_move);
+        StopCoroutine(stop_move);
     }
 
     IEnumerator UpDownMovement()
