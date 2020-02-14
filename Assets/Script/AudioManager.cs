@@ -17,7 +17,7 @@ public class AudioManager : MonoBehaviour
     {
         source.clip = backgroundMusic;
         source.loop = false;
-        source.volume = 0.3f;
+        source.volume = 1f;
         source.Play();
     }
     

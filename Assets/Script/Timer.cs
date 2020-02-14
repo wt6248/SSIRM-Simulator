@@ -27,8 +27,10 @@ public class Timer : MonoBehaviour
             limitTime -= Time.deltaTime;
             if (is_death_match)
                 text.text = limitTime.ToString();
-            else
+            else if (limitTime >= 0)
                 text.text = string.Format("{0:f0}", limitTime);
+            else
+                text.text = "0.0000";
         }
         if (limitTime < 0 && !is_death_match)
         {
