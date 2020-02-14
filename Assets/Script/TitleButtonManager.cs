@@ -7,6 +7,6 @@ public class TitleButtonManager : MonoBehaviour
 {
     public void LoadStartScene()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("PrepareScene");
     }
 }
