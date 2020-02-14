@@ -45,8 +45,8 @@ public class SSIRM_Image : MonoBehaviour
         angle_case = 0;
         gameEnded = false;
         vectorManager = GameObject.Find("VectorManager").GetComponent<VectorManager>();
-        function_Reference_1 = vectorManager.player_Vector_1.GetComponent<Player_1_Vector>();
-        function_Reference_2 = vectorManager.player_Vector_2.GetComponent<Player_2_Vector>();
+        function_Reference_1 = GameObject.Find("Player_1_Vector").GetComponent<Player_1_Vector>();
+        function_Reference_2 = GameObject.Find("Player_2_Vector").GetComponent<Player_2_Vector>();
 
         idleImages = idleImageParent.GetComponentsInChildren<Image>();
         idleImages[0].color = new Color(255f, 255f, 255f, 255f);
