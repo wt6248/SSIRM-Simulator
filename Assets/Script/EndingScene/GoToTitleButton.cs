@@ -19,6 +19,8 @@ public class GoToTitleButton : MonoBehaviour
     public void GoToTitleScreen()
     {
         Destroy(GameObject.Find("Save_data_during_Scene_Change"));
+        Destroy(GameObject.Find("MainBGM"));
+
         UnityEngine.SceneManagement.SceneManager.LoadScene("TitleScene");
     }
     public void appearButton()

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -33,6 +33,7 @@ public class EndingEffectScript : MonoBehaviour
         if (winner != 0)
         {
             //천하장사 만만세 브금이 나와야 함.
+            GameObject.Find("MainBGM").GetComponent<AudioSource>().Stop();
             GameObject.Find("Audio Source").GetComponent<AudioSource>().Play();
             yield return new WaitForSeconds(4);
         }
