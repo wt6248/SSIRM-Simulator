@@ -48,6 +48,6 @@ public class EndingEffectScript : MonoBehaviour
         else if (winner == 2)
             winner_Image_function.winner_2();
 
-
+    
     }
 }
