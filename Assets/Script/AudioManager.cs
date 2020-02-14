@@ -6,7 +6,8 @@ public class AudioManager : MonoBehaviour
 {
     AudioSource source;
     public AudioClip backgroundMusic;           //Inspector 에서 지정, 현재 : SSirm King (Cyber)
-    
+    void Awake() { DontDestroyOnLoad(this); }
+
     void Start()
     {
         source = GetComponent<AudioSource>();

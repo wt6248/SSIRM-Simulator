@@ -29,19 +29,24 @@ public class Button_Game_Start : MonoBehaviour
 
     IEnumerator tempFunction()
     {
+
+        //GameObject.Find("MainBGM").GetComponent<AudioManager>().StartBGM();
         countdown_Image.color = new Color(255, 255, 255, 255);
-        GetComponent<AudioSource>().Play();
+        //GetComponent<AudioSource>().Play();
         yield return new WaitForSecondsRealtime(1);
 
         countdown_Image.sprite = image_2;
-        GetComponent<AudioSource>().Play();
+        //GetComponent<AudioSource>().Play();
         yield return new WaitForSecondsRealtime(1);
 
         countdown_Image.sprite = image_1;
-        GetComponent<AudioSource>().Play();
-        yield return new WaitForSecondsRealtime(1);
-
+        //GetComponent<AudioSource>().Play();
+//      yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSecondsRealtime(0.5f);
         GameObject.Find("MainBGM").GetComponent<AudioManager>().StartBGM();
+        yield return new WaitForSecondsRealtime(0.5f);
+
+        //GameObject.Find("MainBGM").GetComponent<AudioManager>().StartBGM();
         Time.timeScale = 1;
         GetComponent<AudioSource>().Play();
         countdown_Image.color = new Color(255, 255, 255, 255);
