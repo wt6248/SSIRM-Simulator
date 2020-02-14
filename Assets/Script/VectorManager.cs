@@ -18,11 +18,17 @@ public class VectorManager : MonoBehaviour
 
     Player_1_Vector function_Reference_1;
     Player_2_Vector function_Reference_2;
+
+    Player_Image_Sprite winner_data;
+    Timer temp_timer;
+
     // Start is called before the first frame update
     void Start()
     {
         function_Reference_1 = player_Vector_1.GetComponent<Player_1_Vector>();
         function_Reference_2 = player_Vector_2.GetComponent<Player_2_Vector>();
+        winner_data = GameObject.Find("Player_Image_Sprite").GetComponent<Player_Image_Sprite>();
+        temp_timer = GameObject.Find("Timer").GetComponent<Timer>();
 
         click_Change = 1f;
         high_Click_Change = 1.3f;
@@ -47,16 +53,18 @@ public class VectorManager : MonoBehaviour
     //테스트 안함.
     public void winner_checker()
     {
-        Timer temp_timer = GameObject.Find("Timer").GetComponent<Timer>();
+        
+
         float length_1 = function_Reference_1.vector_length();
         float length_2 = function_Reference_2.vector_length();
+
         if(length_1 > winning_length)
         {
-            temp_timer.GameEnd(1);
+            temp_timer.GameEnd(1, winner_data.get_game_state());
         }
         if (length_2 > winning_length)
         {
-            temp_timer.GameEnd(2);
+            temp_timer.GameEnd(2, winner_data.get_game_state());
         }
     }
 
