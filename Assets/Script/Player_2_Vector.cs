@@ -33,11 +33,11 @@ public class Player_2_Vector : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
             GetComponent<AudioSource>().Play();
-            //if(vector_x > 0)
-            //{
-            //    vector_x -= change_reference.click_Change;
-            //}
-            //else
+            if(vector_x > 0)
+            {
+                vector_x -= change_reference.click_Change;
+            }
+            else
             if (opponent_1_Vector.vector_x < 0)
                 {
                     if (opponent_1_Vector.vector_x < -change_reference.change_length)
@@ -56,11 +56,11 @@ public class Player_2_Vector : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
             GetComponent<AudioSource>().Play();
-            //if (vector_x < 0)
-            //{
-            //    vector_x += change_reference.click_Change;
-            //}
-            //else 
+            if (vector_x < 0)
+            {
+                vector_x += change_reference.click_Change;
+            }
+            else 
             if (opponent_1_Vector.vector_x > 0)
                 {
                     if (opponent_1_Vector.vector_x > change_reference.change_length)
@@ -79,11 +79,11 @@ public class Player_2_Vector : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 GetComponent<AudioSource>().Play();
-                //if (vector_y < 0)
-                //{
-                //    vector_y += change_reference.click_Change;
-                //}
-                //else GetComponent<AudioSource>().Play();
+                if (vector_y < 0)
+                {
+                    vector_y += change_reference.click_Change;
+                }
+                else
                 if (opponent_1_Vector.vector_y > 0)
                 {
                     if (opponent_1_Vector.vector_y > change_reference.change_length)
@@ -102,11 +102,11 @@ public class Player_2_Vector : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
             GetComponent<AudioSource>().Play();
-            //if (vector_y > 0)
-            //{
-            //    vector_y -= change_reference.click_Change;
-            //}
-            //else 
+            if (vector_y > 0)
+            {
+                vector_y -= change_reference.click_Change;
+            }
+            else 
             if (opponent_1_Vector.vector_y < 0)
                 {
                     if (opponent_1_Vector.vector_y < -change_reference.change_length)

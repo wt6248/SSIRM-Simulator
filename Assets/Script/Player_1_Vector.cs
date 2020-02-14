@@ -36,11 +36,11 @@ public class Player_1_Vector : MonoBehaviour
         {
 
             GetComponent<AudioSource>().Play();
-            //if(vector_x > 0)
-            //{
-            //    vector_x -= change_reference.click_Change;
-            //}
-            //else
+            if(vector_x > 0)
+            {
+                vector_x -= change_reference.click_Change;
+            }
+            else
             if (opponent_2_Vector.vector_x < 0)
             {
                 if (opponent_2_Vector.vector_x < -change_reference.change_length)
@@ -62,11 +62,11 @@ public class Player_1_Vector : MonoBehaviour
             //효과음 파트
             GetComponent<AudioSource>().Play();
 
-            //if (vector_x < 0)
-            //{
-            //    vector_x += change_reference.click_Change;
-            //}
-            //else 
+            if (vector_x < 0)
+            {
+                vector_x += change_reference.click_Change;
+            }
+            else 
             if (opponent_2_Vector.vector_x > 0)
             {
                 if (opponent_2_Vector.vector_x > change_reference.change_length)
@@ -90,11 +90,11 @@ public class Player_1_Vector : MonoBehaviour
         {
 
             GetComponent<AudioSource>().Play();
-            //if (vector_y < 0)
-            //{
-            //    vector_y += change_reference.click_Change;
-            //}
-            //else 
+            if (vector_y < 0)
+            {
+                vector_y += change_reference.click_Change;
+            }
+            else 
             if (opponent_2_Vector.vector_y > 0)
             {
                 if (opponent_2_Vector.vector_y > change_reference.change_length)
@@ -113,11 +113,11 @@ public class Player_1_Vector : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S))
         {
             GetComponent<AudioSource>().Play();
-            //if (vector_y > 0)
-            //{
-            //    vector_y -= change_reference.click_Change;
-            //}
-            //else 
+            if (vector_y > 0)
+            {
+                vector_y -= change_reference.click_Change;
+            }
+            else 
             if (opponent_2_Vector.vector_y < 0)
             {
                 if (opponent_2_Vector.vector_y < -change_reference.change_length)
