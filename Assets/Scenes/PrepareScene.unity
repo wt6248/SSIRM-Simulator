@@ -174,7 +174,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6728d942bf14edb43ad44959fd7244c3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fbdbf3b1599f15f4794400585d11af46, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -193,8 +193,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 231592252}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.03, y: -2.89, z: 0}
-  m_LocalScale: {x: 1.7, y: 1.7, z: 1}
+  m_LocalPosition: {x: 0.4, y: -4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -664,7 +664,7 @@ MonoBehaviour:
   destroy_This_Button: {fileID: 1409709568}
   half_judge: {fileID: 21300000, guid: a23ee29a19c9daf4487a4a895132425c, type: 3}
   wake_judge: {fileID: 21300000, guid: 15638519bb76e9244bb28003e1762c58, type: 3}
-  player_wake: {fileID: 21300000, guid: b377523a585d07e45848fd5d35137c0a, type: 3}
+  player_wake: {fileID: 21300000, guid: 68f3ffe27f2a11a4b960e10798fb455b, type: 3}
   judge: {fileID: 1940388460}
   player: {fileID: 231592253}
   stop_Crowd_movement: {fileID: 479660017}
