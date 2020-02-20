@@ -83,7 +83,7 @@ public class Player_2_Vector : MonoBehaviour
                 //{
                 //    vector_y += change_reference.click_Change;
                 //}
-                //else GetComponent<AudioSource>().Play();
+                //else
                 if (opponent_1_Vector.vector_y > 0)
                 {
                     if (opponent_1_Vector.vector_y > change_reference.change_length)
