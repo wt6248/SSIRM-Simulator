@@ -51,7 +51,7 @@ public class Timer : MonoBehaviour
             TimeOver();
             game_End_Value = true;
         }
-
+        /*
         if (Input.GetKeyDown(KeyCode.Alpha1))
             GameEnd(1,0);
         if (Input.GetKeyDown(KeyCode.Alpha2))
@@ -60,6 +60,7 @@ public class Timer : MonoBehaviour
             GameEnd(2, 6);
         if (Input.GetKeyDown(KeyCode.Alpha4))
             GameObject.Find("Player_2_Vector").GetComponent<Player_2_Vector>().vector_y=80;
+            */
     }
 
     public void GameEnd(int winner, int winning_state)
