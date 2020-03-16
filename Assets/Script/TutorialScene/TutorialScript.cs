@@ -8,6 +8,7 @@ public class TutorialScript : MonoBehaviour
     public GameObject ring_outside;
     public GameObject ring_inside;
     public GameObject ring_whole;
+    public GameObject key_explanation;
 
     public VectorManageScript vectorManageScript;
 
@@ -17,10 +18,11 @@ public class TutorialScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        TutorialState = 1;
+        TutorialState = 0;
         tutorial_8_reseted = false;
         tutorial_9_reseted = false;
         ring_whole.SetActive(false);
+        key_explanation.SetActive(false);
     }
 
     // Update is called once per frame
@@ -61,9 +63,23 @@ public class TutorialScript : MonoBehaviour
 
     }
 
+    public void down_Tutorial_state()
+    {
+
+        if (TutorialState == 5 || TutorialState == 6 || TutorialState == 8 || TutorialState == 9)
+            TutorialState -= 1;
+        else if(TutorialState > 1)
+            TutorialState -= 2;
+    }
+    public void Up_Tutorial_state()
+    {
+        if (TutorialState == 5 || TutorialState == 6 || TutorialState == 8 || TutorialState == 9)
+            TutorialState++;
+    }
+
     void getScript_0()
     {
-        tutorial_explanation.text = "디버그용 메세지. ";
+        tutorial_explanation.text = "안녕하시오. 나는 심판이다.\n(마우스 왼쪽 버튼을 눌러 진행하세요.)";
     }
 
     void getScript_1()
@@ -83,6 +99,7 @@ public class TutorialScript : MonoBehaviour
     }
     void getScript_4()
     {
+        key_explanation.SetActive(true);
         tutorial_explanation.text = "각 방향키는 밀기, 당기기, 왼다리, 오른다리에 일치한다.\n" +
                                     "1번 선수 홍샅바는 W, S, A, D를 연타하는 것으로 힘을 줄 수 있고,\n" +
                                     "2번 선수 청샅바는 위, 아래, 왼쪽 오른쪽 방향키를 연타하는 것으로 힘을 줄 수 있다.";
