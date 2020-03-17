@@ -28,58 +28,33 @@ public class TutorialScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
-        if (TutorialState == 5)
-        {
-            if (vectorManageScript.check_winning() == 1)
-                TutorialState += 1;
-        }
-        else if (TutorialState == 6)
-        {
-            if (vectorManageScript.check_winning() == 2)
-                TutorialState += 1;
-        }
-        else if (TutorialState == 8)
-        {
-            if (vectorManageScript.check_p2_length_0())
-                TutorialState += 1;
-        }
-        else if (TutorialState == 9)
-        {
-            if (vectorManageScript.check_p1_length_0())
-                TutorialState += 1;
-        }
-        else
-        {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
-            {
-                TutorialState += 1;
-            }
-        }
         Invoke("getScript_" + TutorialState.ToString(), 0f);
-
-
-
     }
 
     public void down_Tutorial_state()
     {
-
+        /*
         if (TutorialState == 5 || TutorialState == 6 || TutorialState == 8 || TutorialState == 9)
             TutorialState -= 1;
         else if(TutorialState > 1)
             TutorialState -= 2;
+            */
+        if(TutorialState > 0)
+            TutorialState--;
     }
     public void Up_Tutorial_state()
     {
+        /*
         if (TutorialState == 5 || TutorialState == 6 || TutorialState == 8 || TutorialState == 9)
+            TutorialState++;
+            */
+        if(TutorialState < 13)
             TutorialState++;
     }
 
     void getScript_0()
     {
-        tutorial_explanation.text = "안녕하시오. 나는 심판이다.\n(마우스 왼쪽 버튼을 눌러 진행하세요.)";
+        tutorial_explanation.text = "안녕하시오. 나는 심판이다.\n(다음 버튼을 눌러 진행하세요.)";
     }
 
     void getScript_1()
@@ -112,6 +87,9 @@ public class TutorialScript : MonoBehaviour
         vectorManageScript.vector_1_enabled = true;
         vectorManageScript.vector_2_enabled = false;
         vectorManageScript.reset_game_p2();
+
+        if (vectorManageScript.check_winning() == 1)
+            TutorialState += 1;
     }
     void getScript_6()
     {
@@ -120,12 +98,16 @@ public class TutorialScript : MonoBehaviour
         vectorManageScript.vector_1_enabled = false;
         vectorManageScript.vector_2_enabled = true;
         vectorManageScript.reset_game_p1();
+
+        if (vectorManageScript.check_winning() == 2)
+            TutorialState += 1;
     }
     void getScript_7()
     {
         vectorManageScript.reset_game();
         tutorial_explanation.text = "화살표가 씨름판 바깥으로 나가면, 기술이 발동해서 상대방을 넘어트릴 수 있다.\n" +
                                     "상대방 화살표 방향의 키를 입력해서, 상대방의 힘(화살표)을 빼는 것으로 방어할 수 있다.";
+        tutorial_8_reseted = false;
     }
     void getScript_8()
     {
@@ -138,11 +120,14 @@ public class TutorialScript : MonoBehaviour
         }
         vectorManageScript.vector_1_enabled = true;
         vectorManageScript.vector_2_enabled = false;
+        tutorial_9_reseted = false;
+
+        if (vectorManageScript.check_p2_length_0())
+            TutorialState += 1;
     }
     void getScript_9()
     {
         tutorial_explanation.text = "이번에는 2번 선수 청샅바가, 상대방의 공격을 방어해서 상대방의 화살표를 없애보도록.";
-
         if (!tutorial_9_reseted)
         {
             vectorManageScript.reset_game_3();
@@ -150,12 +135,17 @@ public class TutorialScript : MonoBehaviour
         }
         vectorManageScript.vector_1_enabled = false;
         vectorManageScript.vector_2_enabled = true;
+        tutorial_8_reseted = false;
 
+        if (vectorManageScript.check_p1_length_0())
+            TutorialState += 1;
     }
     void getScript_10()
     {
 
         vectorManageScript.vector_1_enabled = true;
+        tutorial_9_reseted = false;
+        vectorManageScript.reset_game();
         tutorial_explanation.text = "지금까지 알려준대로 공격과 방어를 통해, 상대방을 넘어트리면 승리를 가질 수 있다.\n" +
                                     "자신의 화살표가 클수록, 상대방의 방어력이 더 커져서, 한번에 올리기 힘들지.";
     }
@@ -167,7 +157,7 @@ public class TutorialScript : MonoBehaviour
 
     void getScript_12()
     {
-        tutorial_explanation.text = "노력을 통해 승리를 쟁취하도록. (마우스 왼쪽 버튼 클릭시, 타이틀 화면으로 돌아갑니다.)";
+        tutorial_explanation.text = "노력을 통해 승리를 쟁취하도록. (다음 버튼 클릭시, 타이틀 화면으로 돌아갑니다.)";
     }
 
     void getScript_13()

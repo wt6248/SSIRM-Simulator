@@ -2329,8 +2329,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flash_w: {fileID: 959079697}
-  flash_a: {fileID: 958421957}
-  flash_s: {fileID: 563802721}
+  flash_a: {fileID: 563802721}
+  flash_s: {fileID: 958421957}
   flash_d: {fileID: 172513215}
   flash_up: {fileID: 407435667}
   flash_down: {fileID: 2118528127}
