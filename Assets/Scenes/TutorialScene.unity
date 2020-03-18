@@ -817,8 +817,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.2
-  m_Text: "\uC548\uB155\uD558\uC2DC\uC624. \uB098\uB294 \uC2EC\uD310\uC774\uB2E4.
-    \n(\uB9C8\uC6B0\uC2A4 \uC67C\uCABD \uBC84\uD2BC\uC744 \uD074\uB9AD\uD558\uC138\uC694.)"
+  m_Text: "\uAC8C\uC784 \uC2DC\uC791\uC2DC, \uC815\uC0C1\uC801\uC778 \uD14D\uC2A4\uD2B8\uB85C
+    \uBC14\uB01C.\n"
 --- !u!222 &664686754
 CanvasRenderer:
   m_ObjectHideFlags: 0
