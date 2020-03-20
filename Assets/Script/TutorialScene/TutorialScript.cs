@@ -107,7 +107,7 @@ public class TutorialScript : MonoBehaviour
     }
     void getScript_4_1()
     {
-        tutorial_explanation.text = "1번 선수 홍샅바는 W, S, A, D를 연타하는 것으로 연타하는 것으로 힘을 줄 수 있다.";
+        tutorial_explanation.text = "1번 선수 홍샅바는 W, S, A, D를 연타하는 것으로 힘을 줄 수 있다.";
     }
     void getScript_4_2()
     {
